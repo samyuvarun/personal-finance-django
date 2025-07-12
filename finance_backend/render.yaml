@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: personal-finance-backend
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn personal_finance.wsgi
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: personal_finance.settings
+      - key: SECRET_KEY
+        value: your-secret-key
+      - key: DEBUG
+        value: "False"
